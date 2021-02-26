@@ -1,11 +1,31 @@
 {
   "name": "3916hw2",
   "version": "1.0.0",
-  "description": " ",
-  "main": "index.js",
+  "description": "Web API HW2",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronldickman/3916HW2.git"
+  },
   "author": "Aaron Dickman",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronldickman/3916HW2/issues"
+  },
+  "homepage": "https://github.com/aaronldickman/3916HW2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0"
+  }
 }
