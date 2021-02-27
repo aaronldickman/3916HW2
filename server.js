@@ -20,7 +20,7 @@ function getJSONObjectForMovieRequirement(req){
         headers: "No headers",
         key: process.env.UNIQUE_KEY,
         body: "No body",
-        query: "No query"
+        query: "No query in request"
     }
 
     if(req.body != null){
