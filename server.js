@@ -27,7 +27,7 @@ function getJSONObjectForMovieRequirement(req){
         json.body = req.body;
     }
     console.log(req.query);
-    if(req.query != null){
+    if(req.query != {}){
         json.query = req.query;
     }
 
