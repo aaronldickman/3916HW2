@@ -19,14 +19,15 @@ function getJSONObjectForMovieRequirement(req){
     var json = {
         headers: "No headers",
         key: process.env.UNIQUE_KEY,
-        body: "No body"
+        body: "No body",
+        query: "No query"
     }
 
     if(req.body != null){
         json.body = req.body;
     }
 
-    if(req.query != null){
+    if(Object.keys(req.query).length !== 0){
         json.query = req.query;
     }
 
@@ -80,6 +81,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "movie found";
         res.json(o);
     })
     .get(function(req, res){
@@ -88,6 +90,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "GET movies";
         res.json(o);
     })
     .put(authJwtController.isAuthenticated, function(req, res) {
@@ -97,6 +100,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "movie updated";
         res.json(o);
     })
     .delete(authController.isAuthenticated, function(req, res){
