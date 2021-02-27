@@ -81,7 +81,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
-        o.msg = "move found";
+        o.msg = "movie found";
         res.json(o);
     })
     .get(function(req, res){
