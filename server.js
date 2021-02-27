@@ -80,6 +80,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "move found";
         res.json(o);
     })
     .get(function(req, res){
@@ -88,6 +89,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "GET movies";
         res.json(o);
     })
     .put(authJwtController.isAuthenticated, function(req, res) {
@@ -97,6 +99,7 @@ router.route('/movies')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "movie updated";
         res.json(o);
     })
     .delete(authController.isAuthenticated, function(req, res){
