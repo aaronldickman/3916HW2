@@ -19,14 +19,15 @@ function getJSONObjectForMovieRequirement(req){
     var json = {
         headers: "No headers",
         key: process.env.UNIQUE_KEY,
-        body: "No body"
+        body: "No body",
+        query: "No query"
     }
 
     if(req.body != null){
         json.body = req.body;
     }
 
-    if(req.query != null){
+    if(req.query !== {}){
         json.query = req.query;
     }
 
